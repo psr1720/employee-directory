@@ -1,0 +1,70 @@
+<section class="{{sideBar}}">
+    <div>
+        <a (click)="homePage()" title="logo"><img class="the-logo" src="../../../assets/images/TezoLogo.png" alt="Tezo Logo"></a>
+        <a (click)="collapseSidebar()" title="collapse-arrow"><img class="collapse-button" src="../../../assets/images/handle.png" alt="collapse"></a>
+        <h6 class="sidebar-heading">ALL</h6>
+
+        <a>
+            <div class="sidebar-sub-heading">
+                <div class="sidebar-icon-and-heading">
+                    <div><img class="heading-icon" src="../../../assets/images/Horizontal nav/Dashboard.svg"></div>
+                    <div>
+                        <p>Dashboard</p>
+                    </div>
+                </div>
+                <div class="sideline"></div>
+            </div>
+        </a>
+
+        <a (click)="homePage()">
+            <div class="sidebar-sub-heading" [ngClass]="{'active': isActive('/auth/employee')}">
+                <div class="sidebar-icon-and-heading">
+                    <div><img class="heading-icon" src="../../../assets/images/Horizontal nav/Employees.svg"></div>
+                    <div>
+                        <p>Employees</p>
+                    </div>
+                </div>
+                <div class="sideline"></div>
+            </div>
+        </a>
+        
+        <h6 class="sidebar-heading">ROLE/ USER MANAGEMENT</h6>
+
+        <a (click)="rolesPage()">
+            <div class="sidebar-sub-heading"[ngClass]="{'active': isActive('/auth/role')}">
+                <div class="sidebar-icon-and-heading">
+                    <div><img class="heading-icon" src="../../../assets/images/Horizontal nav/Roles.svg"></div>
+                    <div>
+                        <p>Roles</p>
+                    </div>
+                </div>
+                <div class="sidebar-arrow">
+                    <span class="material-symbols-outlined arrow">navigate_next</span>
+                    <div class="sideline"></div>
+                </div>
+            </div>
+        </a>
+
+        <a>
+            <div class="sidebar-sub-heading">
+                <div class="sidebar-icon-and-heading">
+                    <div><img class="heading-icon" src="../../../assets/images/Horizontal nav/assign user.svg"></div>
+                    <div>
+                        <p>Assign User Roles</p>
+                    </div>
+                </div>
+                <div class="sidebar-arrow">
+                    <span class="material-symbols-outlined arrow">navigate_next</span>
+                    <div class="sideline"></div>
+                </div>
+            </div>
+        </a>
+        
+    </div>
+    <div class="new-update">
+        <p>Install new update 2.3.1A</p>
+        <h6>Allow to launch the new update for the AD application</h6>
+        <button class="btn-dismiss">Dismiss</button>
+        <button class="btn-accept">Accept</button>
+    </div>
+</section>

@@ -1,0 +1,176 @@
+.sidebar {
+    background-color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar.active{
+    .new-update{
+        display:none;
+    }
+    .collapse-button{
+        transform: rotate(180deg);
+    }
+    p,span,h6{
+        display:none;
+    }
+    .the-logo{
+        display:none;
+    }
+    .sidebar-sub-heading{
+        margin-top:1rem;
+        height:3rem;
+    }
+
+}
+
+
+.the-logo {
+    width: 5rem;
+    padding-left: 0.9rem;
+    padding-top: 0.6rem;
+}
+
+.collapse-button {
+    position: absolute;
+    height: 1.6rem;
+    right: -0.5rem;
+    top: 0.6rem;
+}
+
+.sidebar-heading {
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: rgb(177, 185, 193);
+    padding-left: 0.9rem;
+}
+
+
+.sidebar-sub-heading:hover {
+    background-color: rgb(254, 195, 195);
+    .sideline{
+        display: block;
+    }
+}
+
+.sidebar-sub-heading:hover p {
+    color: rgb(244, 72, 72);
+    
+}
+
+.sidebar-sub-heading.active{
+    background-color: rgb(254, 195, 195);
+    .sideline{
+        display: block;
+    }
+}
+
+.sidebar-sub-heading.active p {
+color: rgb(244, 72, 72);
+    
+}
+
+.sideline{
+    background-color: rgb(244, 72, 72);
+    width: 3px;
+    height :2rem;
+    display:none;
+    border-radius: 1rem 0 0 1rem;
+}
+.sidebar-arrow{
+    display:flex;
+    align-items: center;
+}
+.sidebar-sub-heading {
+    padding-left: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    font-weight: 400;
+    border-radius: 0.4rem;
+
+}
+.sidebar-sub-heading-visible{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar-sub-heading p {
+    color: grey;
+
+}
+
+.sidebar-icon-and-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.heading-icon {
+    width: 1.2rem;
+    padding-right: 0.5rem;
+}
+
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+.arrow {
+    color: grey
+}
+
+.new-update {
+    background-color: rgb(254, 238, 238);
+    border-radius: 1rem;
+    padding-bottom: 0.6rem;
+    margin-top: 7.5rem
+}
+
+.new-update p {
+    font-size: 0.7rem;
+    color: rgb(244, 72, 72);
+    padding-top: 1rem;
+    padding-left: 10px;
+    margin: 0;
+}
+
+.new-update h6 {
+    font-size: 0.65rem;
+    color: rgb(159, 159, 159);
+    font-weight: 400;
+    margin: 11px 0px;
+    padding-left: 10px;
+}
+
+.btn-dismiss {
+    font-size: 0.7rem;
+    background-color: rgb(254, 195, 195);
+    border: 1px rgb(254, 195, 195);
+    border-radius: 7px;
+    color: rgb(244, 72, 72);
+    margin-left: 0.9rem;
+    height: 2rem;
+    width: 3.3rem;
+}
+
+.btn-accept {
+    font-size: 0.7rem;
+    background-color: rgb(244, 72, 72);
+    border: 1px rgb(244, 72, 72);
+    border-radius: 7px;
+    color: white;
+    height: 2rem;
+    width: 3.3rem;
+    margin-left: 0.2rem;
+}
+

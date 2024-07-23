@@ -1,0 +1,25 @@
+* {
+    font-family: Lato;
+}
+a:hover,
+button:hover,
+select:hover {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+:root{
+    --very-light-pink: rgb(254,195,195);
+    --light-pink: rgb(248,145,145);
+    --bright-orange: rgb(244,72,72);
+    --light-gray:rgb(243,243,243);
+    --very-light-gray:rgb(234, 235, 238);
+    --light-blue-gray:rgb(152, 163, 177);
+    --muted-blue-gray:rbg(140,154,168);
+    --very-light-blue-gray:rgb(131,144,156);
+    --muted-gray:rgb(120,120,120);
+    --muted-blue-gray:rgb(76,95,113);
+    --dark-blue-gray:rgb(69,85,115);
+}

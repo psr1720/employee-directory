@@ -1,0 +1,103 @@
+header {
+    background-color: white;
+    margin-left: 0.6rem;
+    grid-area: header;
+    padding-left: 1.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.1);
+    height: 3.3rem;
+    border-radius: 0.8rem;
+}
+
+.header-searchbox {
+    display: flex;
+    align-items: center;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.profile-section p {
+    margin: 0;
+}
+
+.img-search {
+    width: 1rem;
+}
+
+.input-searchbox {
+    outline: none;
+    border-style: none;
+    padding-left: 0.5rem;
+    height: 100%;
+    width: 100%;
+}
+
+.input-searchbox::placeholder {
+    opacity: 0.4;
+}
+
+.header-icon {
+    width: 2rem;
+
+}
+
+.img-avatar {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    margin-right: 0.3rem;
+}
+
+.person-name {
+    font-size: 0.6rem;
+}
+
+.person-role {
+    font-size: 0.9rem;
+}
+
+.down-arrow {
+    padding-left: 8px;
+    rotate: 180deg;
+}
+
+.rotate180 {
+    transform: rotate(180deg);
+}
+
+.account-options {
+    position: absolute;
+    font-size: 0.7rem;
+    background-color: white;
+    width: 7rem;
+    display:none;
+    right: 0rem;
+    top: 3.3rem;
+    text-align: start;
+    border: 1px solid black;
+}
+
+.account-options p {
+    margin: 0;
+    height: 2rem;
+    padding-left: 0.4rem;
+    padding-top: 0.7rem;
+}
+
+.options-text:hover {
+    background-color: rgb(244, 72, 72);
+    color: white;
+}

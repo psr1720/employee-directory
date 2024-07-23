@@ -1,0 +1,59 @@
+.employees {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-heading {
+    margin: 0;
+    padding-left: 0.9rem;
+    color: rgb(76, 95, 113);
+    font-size: 1rem;
+}
+
+.main-text {
+    margin: 0;
+    margin-top: 1rem;
+    padding-left: 0.9rem;
+    font-size: 0.7rem;
+    color: rgb(131, 144, 156)
+}
+
+.btn-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-add-employee{
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    background-color: rgb(244, 72, 72);
+    border: 1px rgb(244, 72, 72);
+    border-radius: 7px;
+    height: 2.1rem;
+    width: 9.8rem;
+    color: white;
+}
+
+
+.img-plus {
+    width: 1rem;
+    margin-right: 0.2rem;
+}
+.btn-export {
+    color: rgb(140, 154, 168);
+    font-size: 0.7rem;
+    padding: 0.3rem;
+    background-color: white;
+    border-radius: 7px;
+    border: 1px solid #d8dbe0;
+    width: 6rem;
+    height: 2.1rem;
+}
+
+.img-export {
+    width: 1rem;
+    margin-right: 0.4rem;
+}

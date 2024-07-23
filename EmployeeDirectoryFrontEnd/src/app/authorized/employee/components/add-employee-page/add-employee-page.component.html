@@ -1,0 +1,140 @@
+<div class="form-section">
+    <form class="form-employee" [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+        <h1>{{title}}</h1>
+        <div class="profile-picture-section">
+            <img class="profile-pic" src={{profilePicSrc}} alt="default-profile-picture">
+            <div *ngIf="!allFieldsReadOnly" class="input-box">
+                <label for="inputFile">{{pictureUploadButtonText}}</label>
+                <input (change)="viewSrcChange($event)" type="file" accept="image/jpeg , image/jpg, image/png"
+                    id="inputFile" formControlName="profilePicture">
+            </div>
+        </div>
+        <h2>Personal Information</h2>
+        <div class="input-rows">
+            <div class="label-input">
+                <label for="inputEmployeeNumber"> Emp no<span class="red-asterisk">*</span></label>
+                <input type="text" class="inpt-box" id="inputEmployeeNumber" placeholder="Text" formControlName="employeeId"
+                    [readOnly]="employeeIdReadOnly">
+                <div *ngIf="employeeForm.get('employeeId')?.invalid && employeeForm.get('employeeId')?.touched"
+                    class="visible-prompt">
+                    <p class="required-field"><span class="material-symbols-outlined exclaim">emergency_home</span>this
+                        field is required</p>
+                </div>
+            </div>
+        </div>
+        <div class="input-rows">
+            <div class="label-input">
+                <label for="inputFirstName"> First Name<span class="red-asterisk">*</span></label>
+                <input type="text" class="inpt-box" id="inputFirstName" placeholder="Text" formControlName="firstName"
+                    [readOnly]="allFieldsReadOnly">
+                <div *ngIf="employeeForm.get('firstName')?.invalid && employeeForm.get('firstName')?.touched"
+                    class="visible-prompt">
+                    <p class="required-field"><span class="material-symbols-outlined exclaim">emergency_home</span>this
+                        field is
+                        required</p>
+                </div>
+            </div>
+            <div class="label-input">
+                <label for="inputLastName"> Last Name<span class="red-asterisk">*</span></label>
+                <input type="text" class="inpt-box" id="inputLastName" placeholder="Text" formControlName="lastName"
+                    [readOnly]="allFieldsReadOnly">
+                <div *ngIf="employeeForm.get('lastName')?.invalid && employeeForm.get('lastName')?.touched"
+                    class="visible-prompt">
+                    <p class="required-field"><span class="material-symbols-outlined exclaim">emergency_home</span>this
+                        field is
+                        required</p>
+                </div>
+            </div>
+            <div class="label-input">
+                <label for="inputDob"> Date of Birth<span class="red-asterisk">*</span></label>
+                <input type="text" class="inpt-box" id="inputDob" placeholder="Select" onfocus="(this.type='date')"
+                    formControlName="dob" [max]="today" [readOnly]="allFieldsReadOnly">
+                <div *ngIf="employeeForm.get('dob')?.invalid && employeeForm.get('dob')?.touched"
+                    class="visible-prompt">
+                    <p class="required-field"><span class="material-symbols-outlined exclaim">emergency_home</span>this
+                        field is required
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="input-rows">
+            <div class="label-input label-input-email">
+                <label for="inputEmail"> Email Id<span class="red-asterisk">*</span></label>
+                <input type="email" class="inpt-box" id="inputEmail" placeholder="Joe.j@technovert.com"
+                    formControlName="emailID" [readOnly]="allFieldsReadOnly">
+                <div *ngIf="employeeForm.get('emailID')?.invalid && employeeForm.get('emailID')?.touched"
+                    class="visible-prompt">
+                    <p class="required-field">
+                        <span class="material-symbols-outlined exclaim">emergency_home</span>
+                        <span id="text-prompt">this field is required</span>
+                    </p>
+                </div>
+            </div>
+            <div class="label-input label-input-phno">
+                <label for="inputPhoneNumber"> Mobile Number<span class="red-asterisk">*</span></label>
+                <input type="text" class="inpt-box" id="inputPhoneNumber" placeholder="0000000000" formControlName="phoneNo"
+                    [readOnly]="allFieldsReadOnly">
+                <div *ngIf="employeeForm.get('phoneNo')?.invalid && employeeForm.get('phoneNo')?.touched"
+                    class="visible-prompt">
+                    <p class="required-field">
+                        <span class="material-symbols-outlined exclaim">emergency_home</span>
+                        <span id="text-prompt2">this field is required</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <h2>Employement Information</h2>
+        <div class="input-rows input-rows-emp-info">
+            <div class="label-input">
+                <label for="inputJoinDate"> Joining Date<span class="red-asterisk">*</span></label>
+                <input type="text" class="inpt-box" id="inputJoinDate" placeholder="12/08/2023"
+                    onfocus="(this.type='date')" formControlName="joinDate" [readOnly]="allFieldsReadOnly" [max]="today">
+                <div *ngIf="employeeForm.get('joinDate')?.invalid && employeeForm.get('joinDate')?.touched"
+                    class="visible-prompt">
+                    <p class="required-field"><span class="material-symbols-outlined exclaim">emergency_home</span>this
+                        field is required</p>
+                </div>
+            </div>
+            <div class="label-input">
+                <label for="inputLocation"> Location</label>
+                <select formControlName="locationId" id="inputLocation">
+                    <option [value]="0">Select</option>
+                    <option *ngFor="let location of locations" [value]="location.id">{{location.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="input-rows input-rows-emp-info">
+            <div class="label-input">
+                <label for="inputJobTitle"> Job Title</label>
+                <select formControlName="jobTitleId" id="inputJobTitle">
+                    <option [value]="0">Select</option>
+                    <option *ngFor="let jobTitle of jobTitles" [value]="jobTitle.id">{{jobTitle.name}}</option>
+                </select>
+            </div>
+            <div class="label-input">
+                <label for="inputAssignManager">Assign Manager</label>
+                <select formControlName="managerId" id="inputAssignManager">
+                    <option [value]="0">Select</option>
+                    <option *ngFor="let manager of managers" [value]="manager.id">{{manager.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="input-rows input-rows-emp-info">
+
+            <div class="label-input">
+                <label for="inputAssignProject"> Assign Project</label>
+                <select formControlName="projectId" id="inputAssignProject">
+                    <option [value]="0">Select</option>
+                    <option *ngFor="let project of projects" [value]="project.id">{{project.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-buttons">
+            <button (click)="cancelButton()" class="btn-cancel">Cancel</button>
+            <button *ngIf="!allFieldsReadOnly" type="submit"
+                [ngClass]="{'btn-adding-employee-active': employeeForm.valid, 'btn-adding-employee-inactive': employeeForm.invalid}"
+                [disabled]="employeeForm.invalid">{{submitButtonText}}
+            </button>
+        </div>
+    </form>
+</div>

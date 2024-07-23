@@ -1,0 +1,23 @@
+<div class="employees">
+    <div>
+        <h2 class="main-heading">Employees</h2>
+        <p class="main-text">Find all of your company's employee accounts and their associated roles.</p>
+    </div>
+    <div class="employees-btns">
+        <button (click)="exportToCSV()" class="btn-export">
+            <div class="btn-flex">
+                <div><img class="img-export" src="../../assets/images/Masked Icon.png" alt="export"></div>
+                <div>EXPORT</div>
+            </div>
+        </button>
+        <button (click)="addEmployeeButton($event)" class="btn-add-employee">
+            <div class="btn-flex">
+                <div><img class="img-plus" src="../../assets/images/plus.png" alt="export"></div>
+                <div>ADD EMPLOYEE</div>
+            </div>
+        </button>
+    </div>
+</div>
+<app-alphabet-filter [filteredCharacters]="alphabetsSelected" (onFiltersApplied)="alphabetFiltering($event)"></app-alphabet-filter>
+<app-filter-box [locations]="locations" [departments]="departments" [isRolesPage]="isRolesPage" (onFiltersApplied)="filterBoxFiltering($event)" (onReset)="resetFilters()"></app-filter-box>
+<app-table [employeeObjects]="employees" (onMultipleRecordsDelete)="multipleRecordsDeleted($event)" (onRecordDelete)="singleRecordDeleted()"></app-table>

@@ -1,0 +1,57 @@
+<form class="add-role-form" [formGroup]="roleForm" (ngSubmit)="onSubmit()">
+    <h1>{{title}}</h1>
+    <div class="input-rows">
+        <div class="label-input">
+            <label for="inputRoleName">Role Name<span class="red-asterisk">*</span></label>
+            <input type="text" id="inputRoleName" class="inpt-box" formControlName="name" placeholder="Text"
+                required>
+            <div *ngIf="roleForm.get('name')?.invalid && roleForm.get('name')?.touched" class="visible-prompt">
+                <p class="required-field"><span class="material-symbols-outlined exclaim">emergency_home</span>this field
+                    is required</p>
+            </div>
+        </div>
+        <div class="label-input">
+            <label for="inputDepartment">Department</label>
+            <select formControlName="departmentId" id="inputDepartment">
+                <option *ngFor="let department of departments" [value]="department.id">{{department.name}}</option>
+            </select>
+        </div>
+    </div>
+    <div>
+        <div class="label-input-description">
+            <label for="inputRoleDescription">Description</label>
+            <input type="text" id="inputRoleDescription" class="description-input-box" formControlName="description"
+                placeholder="Text">
+        </div>
+    </div>
+    <div class="label-input">
+        <label for="inputLocation">Location</label>
+        <select formControlName="locationId" id="inputLocation">
+            <option *ngFor="let location of locations" [value]="location.id">{{location.name}}</option>
+        </select>
+    </div>
+    <div class="label-input label-input-assign-emp">
+        <label for="input-assign-employee"> Assign Employee</label>
+        <input type="text" id="inputAssignEmployee" placeholder="Search for an employee">
+    </div>
+    <div class="all-employees">
+        <div class="emp-details">
+            <div *ngFor="let employeeObject of employeeObjects" class="emp-details-row">
+                <div class="img-name-div">
+                    <img [src]="employeeObject.profilePicture ? employeeObject.profilePicture : '../../../../assets/images/profilePicDefault.jpg'"
+                        alt="emp-profile-pic">
+                    <p>{{employeeObject.firstName+" "+employeeObject.lastName}}</p>
+                </div>
+                <div>
+                    <input [checked]="isSelected(employeeObject.id)" (click)="employeeChecked(employeeObject.id)" type="checkbox">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="form-buttons">
+        <button routerLink="/auth/role" class="btn-cancel">Cancel</button>
+        <button type="submit" [ngClass]="{'btn-adding-role-active': roleForm.valid, 'btn-adding-role-inactive': roleForm.invalid}"
+        [disabled]="roleForm.invalid">{{submitButtonText}}</button>
+    </div>
+</form>

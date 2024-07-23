@@ -1,0 +1,34 @@
+<header>
+    <div class="header-searchbox">
+        <img class="img-search" src="../../assets/images/bx-search.png" alt="search-icon">
+        <input class="input-searchbox" type="text" placeholder="Search(Ctrl+/)">
+    </div>
+    <div class="header-icons">
+        <img class="header-icon" src="../../assets/images/IconButton.png">
+        <img class="header-icon" src="../../assets/images/icon1.png">
+        <img class="header-icon" src="../../assets/images/icon2.png">
+        <img class="header-icon" src="../../assets/images/icon3.png">
+        <div class="profile-section">
+            <div>
+                <img class="img-avatar"
+                    [src]="employeeProfilePicture ? employeeProfilePicture : '../../assets/images/profilePicDefault.jpg'">
+            </div>
+            <div>
+                <p class="person-name">{{employeeName}}</p>
+                <p class="person-role">{{employeeRole}}</p>
+            </div>
+            <a>
+                <span class="material-symbols-outlined down-arrow" [class.rotate180]="arrowDirection"
+                    (click)="toggleArrow()">expand_more</span>
+            </a>
+            <div class="account-options" [ngStyle]="{ 'display': arrowDirection ? 'block' : 'none' }">
+                <a (click)="changePasswordButton()">
+                    <p class="options-text">Change Password</p>
+                </a>
+                <a (click)="logoutButton()">
+                    <p class="options-text">Logout</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,30 @@
+.alphabet {
+    margin-top: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 0.9rem;
+
+}
+
+.btn-alphabet {
+    width: 2.09rem;
+    height: 2.2rem;
+    margin: 0.2rem;
+    border-style: none;
+    border-radius: 25%;
+    font-size: 0.7rem;
+    color: rgb(152, 163, 177);
+    background-color: rgb(234, 235, 238);
+}
+
+.btn-alphabet.active {
+    color: white;
+    background-color: rgb(244, 72, 72);
+}
+
+.btn-alphabet:hover {
+    color: white;
+    background-color: rgb(244, 72, 72);
+}
+

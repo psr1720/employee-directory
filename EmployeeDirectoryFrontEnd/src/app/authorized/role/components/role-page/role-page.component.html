@@ -1,0 +1,66 @@
+<div class="roles">
+    <div>
+        <h2 class="main-heading">Roles</h2>
+        <p class="main-text">All the roles are configured here</p>
+    </div>
+    <div>
+        <button (click)="addRoleButton()" class="btn-add-role">
+            <div class="btn-flex">
+                <div><img class="img-plus" src="../../assets/images/plus.png" alt="export"></div>
+                <div>ADD ROLE</div>
+            </div>
+        </button>
+    </div>
+</div>
+<app-filter-box [locations]="locations" [departments]="departments" [isRolesPage]="true" (onFiltersApplied)="filterBoxFiltering($event)"></app-filter-box>
+<div class="cards">
+    <div *ngFor="let roleObject of roleObjects" class="card">
+        <div class="card-heading">
+            <div class="card-heading-text">{{roleObject.name}}</div>
+            <div class="edit-icon" ><a (click)="editRoleButton(roleObject.id)" class="a-edit-button"><img src="../../../../assets/images/edit.svg"></a></div>
+        </div>
+        <div class="card-sub-heading">
+            <div class="card-sub-heading-left">
+                <div>
+                    <img class="card-icons" src="../../../../assets/images/team_svgrepo.com.svg">
+                </div>
+                <div>
+                    Department
+                </div>
+            </div>
+            <div class="card-sub-heading-right">
+                {{roleObject.department}}
+            </div>
+        </div>
+        <div class="card-sub-heading">
+            <div class="card-sub-heading-left">
+                <div>
+                    <img class="card-icons" src="../../../../assets/images/location-pin-alt-1_svgrepo.com.svg">
+                </div>
+                <div>
+                    Location
+                </div>
+            </div>
+            <div class="card-sub-heading-right">
+                {{roleObject.location}}
+            </div>
+        </div>
+        <div class="card-sub-heading">
+            <div class="card-sub-heading-left">
+                Total Employees
+            </div>
+            <div class="card-sub-heading-right card-imgs">
+                <div *ngFor="let img of roleObject.imgArray.slice(0,4)">
+                    <img class="imgs-top-5-emps"  [src]="img.profilePicture ? img.profilePicture : '../../../../assets/images/profilePicDefault.jpg'">
+                </div>
+                <div *ngIf="roleObject.imgArray.length > 4" class="plus-43">+{{ roleObject.imgArray.length - 4 }}</div>
+            </div>
+        </div>
+        <a routerLink="/auth/employee/cards/{{roleObject.id}}" class ="a-view-employees">
+        <div class="view-arrow">
+            <p>View all Employees </p>
+            <img class="icon-arrow" src="../../../../assets/images/Vector.svg">
+        </div>
+        </a>
+    </div>  
+</div>

@@ -1,0 +1,30 @@
+.home-wrapper {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 12fr;
+    grid-template-columns: 1fr 6.5fr;
+    grid-template-areas:
+        "app-left-nav app-search-bar"
+        "app-left-nav router-outlet-wrapper";
+}
+.home-wrapper.active{
+    grid-template-columns: 0.3fr 7fr;
+
+}
+
+app-left-nav {
+    grid-area: app-left-nav;
+}
+
+app-search-bar {
+    grid-area: app-search-bar;
+}
+
+router-outlet {
+    grid-area: router-outlet-wrapper;
+}
+
+.router-outlet-wrapper {
+    background-color: white;
+    margin-top: 1rem;
+}

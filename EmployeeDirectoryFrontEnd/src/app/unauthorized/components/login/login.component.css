@@ -1,0 +1,38 @@
+.login-box{
+    display:grid;
+    background-color: rgb(254, 195, 195);
+    margin: 10rem 25rem 10rem 25rem;
+    padding: 0rem 0rem 3rem 0rem;
+    border-radius: 6%;
+}
+h1{
+    color: rgb(244, 72, 72);
+    text-align: center;
+}
+.input-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+.login-button{
+    display: grid;
+    place-items: center;
+}
+
+button{
+    background-color: rgb(244, 72, 72);
+    border-color: rgb(244, 72, 72);
+    border-radius: 0.4rem;
+    border-style: none;
+    margin-top:0.2rem;
+    padding: 0.5rem 1rem;
+    color:white
+}
+input{
+    height:1.5rem
+}
+p{
+    color: red;
+    text-align: center;
+}

@@ -1,0 +1,71 @@
+<div class="employee-cards">
+    <div>
+        <h2 class="main-heading main-heading-employee-page">Roles <span
+                class="material-symbols-outlined navigate">navigate_next</span> Employees</h2>
+        <p class="main-text main-title-employee-page">All the roles are configured here</p>
+    </div>
+    <div>
+        <button class="btn-add-employee">
+            <div class="btn-flex">
+                <div><img class="img-plus" src="../../assets/images/plus.png" alt="export"></div>
+                <div>ADD EMPLOYEE</div>
+            </div>
+        </button>
+    </div>
+</div>
+<h2 class="roles-description">Roles Description</h2>
+<p class="config-text">Configure the provider that are available to users when they sign in.
+    Configure the provider that are available to users when they sign in.
+    Configure the provider that are available to users when they sign in.
+    Configure the provider that are available to users when they sign in.</p>
+<div class="cards">
+    <div *ngFor="let employeeObject of employeeObjects" class="card">
+        <div class="profile-section-copy profile-section-copy-employee-page">
+            <div>
+                <img class="img-avatar" src="{{employeeObject.profilePicture}}">
+            </div>
+            <div>
+                <p class="card-person-name">{{employeeObject.firstName}} {{employeeObject.lastName}}</p>
+                <p class="card-person-role">{{employeeObject.jobTitle}}</p>
+            </div>
+        </div>
+        <div class="card-sub-heading">
+            <div>
+                <img class="card-icons" src="../../../../assets/images/empId.svg">
+            </div>
+            <div>
+                {{employeeObject.employeeId}}
+            </div>
+        </div>
+        <div class="card-sub-heading">
+            <div>
+                <img class="card-icons" src="../../../../assets/images/email-1_svgrepo.com.svg">
+            </div>
+            <div>
+                {{employeeObject.emailID}}
+            </div>
+        </div>
+        <div class="card-sub-heading">
+            <div>
+                <img class="card-icons" src="../../../../assets/images/team_svgrepo.com.svg">
+            </div>
+            <div>
+                {{employeeObject.department}}
+            </div>
+        </div>
+        <div class="card-sub-heading">
+            <div>
+                <img class="card-icons" src="./../../../assets/images/location-pin-alt-1_svgrepo.com.svg">
+            </div>
+            <div>
+                {{employeeObject.location}}
+            </div>
+        </div>
+        <a class="a-view">
+            <div class="view-arrow">
+                <p>View</p>
+                <img class="icon-arrow" src="../../../../assets/images/Vector.svg">
+            </div>
+        </a>
+    </div>
+</div>

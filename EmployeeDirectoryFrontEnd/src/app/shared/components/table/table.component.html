@@ -1,0 +1,139 @@
+<div class="table-box">
+    <div class="delete-and-add-section">
+        <div class="delete-side-section">
+            <img class="left-down-arrow" src="../../assets/images/arrow-turn left -down.png" alt="left down arrow">
+            <button (click)="multipleDeleteButton()" class="{{deleteButtonClass}}">Delete</button>
+        </div>
+        <div class="add-side-section">
+            <img class="add-icon" src="../../assets/images/table-add.png" alt="add icon">
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+            <tr class="table-headings">
+                <th>
+                    <input (click)="outerCheckBoxClick($event)" type="checkbox" class="checkbox">
+                </th>
+                <th class ="th-user">
+                    <div class="th-flex">
+                        <div>
+                            USER
+                        </div>
+                        <div (click)="sortColumn($event)" class ="sortButton firstName">
+                            <span class="material-symbols-outlined unfold">unfold_more</span>
+                        </div>
+                    </div>
+                </th>
+                <th class="th-location">
+                    <div class="th-flex">
+                        <div>
+                            LOCATION
+                        </div>
+                        <div (click)="sortColumn($event)" class ="sortButton location">
+                            <span class="material-symbols-outlined unfold">unfold_more</span>
+                        </div>
+                    </div>
+                </th>
+                <th class="th-department">
+                    <div class="th-flex">
+                        <div>
+                            DEPARTMENT
+                        </div>
+                        <div (click)="sortColumn($event)" class ="sortButton department">
+                            <span class="material-symbols-outlined unfold">unfold_more</span>
+                        </div>
+                    </div>
+                </th>
+                <th class="th-role">
+                    <div class="th-flex">
+                        <div>
+                            ROLE
+                        </div>
+                        <div (click)="sortColumn($event)" class ="sortButton jobTitle">
+                            <span class="material-symbols-outlined unfold">unfold_more</span>
+                        </div>
+                    </div>
+                </th>
+                <th class="th-empno">
+                    <div class="th-flex">
+                        <div>
+                            EMP NO
+                        </div>
+                        <div (click)="sortColumn($event)" class ="sortButton employeeId">
+                            <span class="material-symbols-outlined unfold">unfold_more</span>
+                        </div>
+                    </div>
+                </th>
+                <th class="th-status">
+                    <div class="th-flex">
+                        <div>
+                            STATUS
+                        </div>
+                        <div (click)="sortColumn($event)" class ="sortButton status">
+                            <span class="material-symbols-outlined unfold">unfold_more</span>
+                        </div>
+                    </div>
+                </th>
+                <th class="th-joindt">
+                    <div class="th-flex">
+                        <div>
+                            JOIN DT
+                        </div>
+                        <div (click)="sortColumn($event)" class ="sortButton joinDate">
+                            <span class="material-symbols-outlined unfold">unfold_more</span>
+                        </div>
+                    </div>
+                </th>
+                <th class="tripledot">
+                    ...
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employeeObject of employeeObjects" class="table-rows">
+                <td>
+                    <input #checkBoxRef (click)="innerCheckBoxClick(employeeObject.employeeId)" type="checkbox" class="check-box">
+                </td>
+                <td class="th-user">
+                    <div class="profile-section-copy">
+                        <div>
+                            <img class="img-avatar" [src]="employeeObject.profilePicture ? employeeObject.profilePicture : '../../assets/images/profilePicDefault.jpg'"/>
+                        </div>
+                        <div>
+                            <p class="table-person-name">{{employeeObject.firstName}} {{employeeObject.lastName}}</p>
+                            <p class="table-person-email">{{employeeObject.emailID}}</p>
+                        </div>
+                    </div>
+                </td>
+                <td class="row-content th-location">
+                    {{employeeObject.location}}
+                </td>
+                <td class="row-content th-department">
+                    {{employeeObject.department}}
+                </td>
+                <td class="row-content th-role">
+                    {{employeeObject.jobTitle}}
+                </td>
+                <td class="row-content th-empno">
+                    {{employeeObject.employeeId}}
+                </td>
+                <td class="th-status">
+                    <button class="btn-active">{{status}}</button>
+                </td>
+                <td class="row-content th-joindt">
+                    {{employeeObject.joinDate.substring(0,10)}}
+                </td>
+                <td class="triple-dot">
+                    <a (click)="ellipsesClick($event)">
+                        ...
+                        <div class="tooltip">
+                            <a (click)="ellipseViewClick(employeeObject.employeeId)"><p class="tooltip-text">View Details</p></a>
+                            <a (click)="ellipseEditClick(employeeObject.employeeId)"><p class="tooltip-text">Edit</p></a>
+                            <a (click)="ellipseDeleteClick(employeeObject.employeeId)"><p class="tooltip-text">Delete</p></a>
+                        </div>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
