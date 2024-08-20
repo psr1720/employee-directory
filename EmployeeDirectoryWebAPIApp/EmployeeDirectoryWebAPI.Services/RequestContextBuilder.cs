@@ -26,12 +26,12 @@ public class RequestContextBuilder
         var jwtToken = handler.ReadJwtToken(token);
         string id = jwtToken.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value;
         string name  = jwtToken.Claims.First(c => c.Type == ClaimTypes.Name).Value;
-        string role = jwtToken.Claims.First(c => c.Type == ClaimTypes.Role).Value;
+        //string role = jwtToken.Claims.First(c => c.Type == ClaimTypes.Role).Value;
         RequestContext requestContext = new RequestContext
         {
             Id = id,
             Name = name,
-            Role = role,
+            //Role = role,
         };
         return requestContext;
     }
